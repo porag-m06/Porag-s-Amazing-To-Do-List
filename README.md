@@ -110,9 +110,9 @@ Clone this repository to your desired folder:
 To run the project, execute the following command:
 - Open the index.html file on a local server on your browser. 
 
-### Run tests
+### To add dependencies and run linter tests 
 
-To run tests, run the following command:
+Follow the following:
 
 **************
 Initial Step:
