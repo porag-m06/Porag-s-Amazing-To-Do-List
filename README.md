@@ -5,7 +5,7 @@
   <img src="./porag-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h3><b>Porag's Amazing To-do List</b></h3>
-  <h5>A very simple yet powerful to-do list built using WEBPACK and served by a WEBPACK DEV SERVER.<h5>
+  <h5>A very simple yet powerful to-do list built using WEBPACK and served by a WEBPACK DEV SERVER on HTML, CSS, and JS.<h5>
 </div>
 
 
