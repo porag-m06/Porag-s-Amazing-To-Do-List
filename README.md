@@ -157,6 +157,7 @@ To build and run with the webpack dev server:
 
 - (Optional Alternatives)
 > $ npx webpack
+
 > $ npx webpack --config webpack.config.js
 
 ************************
