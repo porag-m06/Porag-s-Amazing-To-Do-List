@@ -203,9 +203,10 @@ https://...
 > Developed by: 
 
 ### Author
-- GitHub: [@ometman](https://github.com/ometman)
-- Twitter: [@twitterhandle](https://twitter.com/ometman)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ometman/)
+- GitHub: [@porag-m06](https://github.com/porag-m06)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-porag-nsu-cse/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
