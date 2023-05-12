@@ -143,13 +143,16 @@ For Webpack:
 - To install the **webpack-dev-server** as a dev dependency (to use live reloading)
 > $ npm install --save-dev webpack-dev-server
 
-- List of the commands to run the build (with all the alternatives)
+- List of the commands to run the build (with all the alternatives).
+
 To build and run with the webpack dev server:
 > $ npm start
-- (Will be served at: http://localhost:8080/)
+
+(Will be served at: http://localhost:8080/)
 
 - To build only :
 > $ npm run build
+
 (and then may be served using a local server e. g. Live Server in VS Code)
 
 - (Optional Alternatives)
