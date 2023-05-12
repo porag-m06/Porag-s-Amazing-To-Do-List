@@ -25,13 +25,24 @@ module.exports = {
     },
 
     //webpack Html plugin for auto generating HTML under dist
+    
     plugins: [
         new HtmlWebpackPlugin ({
             template : './src/index.html'
         }),
     ],
 
-    
+    //webpack dev server to setup local dev server
+    //npm install --save-dev webpack-dev-server 
+    //And, in package.json add (under) "scripts": { start: "webpack serve --open"}
+    //Now, in the CLI run: [ $ npm start ] to start the local dev server.
+    devServer: {
+        static: './dist',
+    },
+
+    optimization: {
+        runtimeChunk: 'single',
+    },
 
 
 }
