@@ -3,20 +3,21 @@
   "description": "A very simple yet powerful to-do list built using WEBPACK",
   "version": "1.0.0",
   "main": "index.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"webpack"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "css-loader": "^6.7.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
+    "html-webpack-plugin": "^5.5.1",
+    "style-loader": "^3.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
@@ -24,7 +25,6 @@
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1"
   },
-
   "dependencies": {
     "acorn": "^7.4.1",
     "acorn-jsx": "^5.3.2",
@@ -317,11 +317,11 @@
     "spdx-license-ids": "^3.0.13",
     "specificity": "^0.4.1",
     "sprintf-js": "^1.0.3",
+    "string_decoder": "^1.3.0",
     "string-width": "^4.2.3",
     "string.prototype.trim": "^1.2.7",
     "string.prototype.trimend": "^1.0.6",
     "string.prototype.trimstart": "^1.0.6",
-    "string_decoder": "^1.3.0",
     "strip-ansi": "^6.0.1",
     "strip-bom": "^3.0.0",
     "strip-indent": "^3.0.0",
