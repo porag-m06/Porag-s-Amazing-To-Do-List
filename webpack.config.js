@@ -1,11 +1,11 @@
-const myOutPath = require('path');
+const myPath = require('path'); //Having the path module to set path for entry & output if we want outside default
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: myPath.resolve(__dirname,'src/index.js'),
     output: {
+        path: myPath.resolve(__dirname,'dist'),
         filename:'[name].bundle.js',
-        path: myOutPath.resolve(__dirname,'dist'),
         clean:true
     }
 }
