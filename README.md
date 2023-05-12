@@ -5,7 +5,7 @@
   <img src="./porag-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h3><b>Porag's Amazing To-do List</b></h3>
-  <h5>A very simple yet powerful to-do list built using WEBPACK and served by a WEBPACK DEV SERVER.<h5>
+  <h5>A very simple yet powerful to-do list built using WEBPACK and served by a WEBPACK DEV SERVER on HTML, CSS, and JS.<h5>
 </div>
 
 
@@ -110,9 +110,9 @@ Clone this repository to your desired folder:
 To run the project, execute the following command:
 - Open the index.html file on a local server on your browser. 
 
-### Run tests
+### To add dependencies and run linter tests 
 
-To run tests, run the following command:
+Follow the following:
 
 **************
 Initial Step:
@@ -143,13 +143,16 @@ For Webpack:
 - To install the **webpack-dev-server** as a dev dependency (to use live reloading)
 > $ npm install --save-dev webpack-dev-server
 
-- List of the commands to run the build (with all the alternatives)
+- List of the commands to run the build (with all the alternatives).
+
 To build and run with the webpack dev server:
 > $ npm start
-- (Will be served at: http://localhost:8080/)
+
+(Will be served at: http://localhost:8080/)
 
 - To build only :
 > $ npm run build
+
 (and then may be served using a local server e. g. Live Server in VS Code)
 
 - (Optional Alternatives)
@@ -200,9 +203,10 @@ https://...
 > Developed by: 
 
 ### Author
-- GitHub: [@ometman](https://github.com/ometman)
-- Twitter: [@twitterhandle](https://twitter.com/ometman)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ometman/)
+- GitHub: [@porag-m06](https://github.com/porag-m06)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-porag-nsu-cse/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
