@@ -2,7 +2,8 @@ const myPath = require('path'); //Having the path module to set path for entry &
 
 module.exports = {
     mode: 'development',
-    entry: myPath.resolve(__dirname,'src/index.js'),
+    entry: {
+        mymain: myPath.resolve(__dirname,'src/index.js')},
     output: {
         path: myPath.resolve(__dirname,'dist'),
         filename:'[name].bundle.js',
