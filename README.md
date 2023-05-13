@@ -50,6 +50,10 @@ This project **Amazing To-do List** is a project demonstrates the use of **HTML 
    <ul>
     <li>webpack</li>
   </ul>
+  
+  - **WEBPACK BASICS HIGHLIGHTS**
+   <img src="./WebpackBasicByPorag.png" alt="webpack basics config highlights" width="auto"  height="auto" />
+
 </details>
 
 <details>
