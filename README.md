@@ -51,6 +51,9 @@ This project **Amazing To-do List** is a project demonstrates the use of **HTML 
     <li>webpack</li>
   </ul>
 </details>
+  
+  - **WEBPACK BASICS HIGHLIGHTS**
+   <img src="./WebpackBasicByPorag.png" alt="webpack basics config highlights" width="auto"  height="auto" />
 
 <details>
   <summary>Server</summary>
@@ -156,7 +159,12 @@ To build and run with the webpack dev server:
 (and then may be served using a local server e. g. Live Server in VS Code)
 
 - (Optional Alternatives)
+> $ npm run webpack or, $ npm run webpack --mode production
+
 > $ npx webpack
+
+> $ npx webpack --mode production
+
 > $ npx webpack --config webpack.config.js
 
 ************************
