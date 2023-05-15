@@ -28,7 +28,7 @@ export default class TodoTasks {
         listItem.classList.add('added-task');
         listItem.id = `${i}`;
         listItem.innerHTML = `<input type="checkbox" class="check${i}" name="" id="" value="">
-            <input type="text" class="content content${i}" name="" id="${i}" value ="${this.taskList[i].description} [${this.taskList[i].completed}][${this.taskList[i].index}]">
+            <input type="text" class="content content${i}" name="" id="${i}" value ="${this.taskList[i].description}">
             <button id="trash-btn"><img id="trash-can" src="${trashImgSrc}" alt="trash icon"></button>`;
         list.appendChild(listItem);
         const checkbox = document.querySelector(`.check${i}`);
