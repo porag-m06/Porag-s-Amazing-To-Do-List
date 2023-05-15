@@ -1,37 +1,34 @@
+import TodoTasks from './todo.js';
 import './style.css';
+
 import refresh from '../assets/rotate-solid.svg';
+import arrowD from '../assets/arrow-turn-down-left.png';
 
 const refreshImg = document.getElementById('refresh');
+const arrowImg = document.getElementById('arrow-d-l');
+
 refreshImg.src = refresh;
+arrowImg.src = arrowD;
 
-const todoTasks = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'complete To-do list project',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'do the daily coding challenges',
-    completed: false,
-    index: 1,
-  },
-];
+const todoForm = document.querySelector('#task-form');
+const clearList = document.querySelector('.btn');
 
-todoTasks.sort((a, b) => a.index - b.index);
+const todos = new TodoTasks();
+if (todos.getLocalStorage().length > 0) {
+  todos.showTodoList();
+}
 
-const setTodoList = (todoTasks) => {
-  const list = document.querySelector('.list');
-  todoTasks.forEach((task) => {
-    const listItem = document.createElement('li');
-    listItem.className = 'hbb';
-    listItem.innerText = task.description;
-    list.appendChild(listItem);
+['keypress', 'submit'].forEach((item) => {
+  todoForm.addEventListener(item, (event) => {
+    if (event.key === 'Enter' || event.type === 'submit') {
+      event.preventDefault();
+      const tDescrip = document.querySelector('.new-item').value;
+      const newTask = new TodoTasks(tDescrip, false, (new TodoTasks()).getLocalStorage().length);
+      newTask.AddTodo();
+      newTask.showTodoList();
+      todoForm.reset();
+    }
   });
-};
+});
 
-setTodoList(todoTasks);
+clearList.addEventListener('click', () => (new TodoTasks()).emptyList());
