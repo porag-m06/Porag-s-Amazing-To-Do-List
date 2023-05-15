@@ -28,18 +28,11 @@ export default class TodoTasks {
         listItem.classList.add('added-task');
         listItem.id = `${i}`;
         listItem.innerHTML = `<input type="checkbox" class="check${i}" name="" id="" value="">
-            <input type="text" class="content content${i}" name="" id="${i}" value ="${this.taskList[i].description}">
+            <input type="text" class="content content${i}" name="" id="${i}" value ="${this.taskList[i].description} [${this.taskList[i].completed}][${this.taskList[i].index}]">
             <button id="trash-btn"><img id="trash-can" src="${trashImgSrc}" alt="trash icon"></button>`;
         list.appendChild(listItem);
-
         const checkbox = document.querySelector(`.check${i}`);
-        checkbox.addEventListener('change', () => {
-          if (checkbox.checked) {
-            document.querySelector(`.content${i}`).classList.add('completed');
-          } else {
-            document.querySelector(`.content${i}`).classList.remove('completed');
-          }
-        });
+        this.isCompleted(checkbox, i);
       }
 
       const tasks = document.querySelectorAll('.added-task');
@@ -48,6 +41,25 @@ export default class TodoTasks {
 
       const taskDescriptions = document.querySelectorAll('.content');
       this.saveOnChangeTask(taskDescriptions);
+    }
+
+    isCompleted = (checkbox, i) => {
+      if (this.taskList[i].completed) {
+        checkbox.checked = true;
+        document.querySelector(`.content${i}`).classList.add('completed');
+      }
+
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          document.querySelector(`.content${i}`).classList.add('completed');
+          this.taskList[i].completed = true;
+          localStorage.setItem('tasks', JSON.stringify(this.taskList));
+        } else {
+          document.querySelector(`.content${i}`).classList.remove('completed');
+          this.taskList[i].completed = false;
+          localStorage.setItem('tasks', JSON.stringify(this.taskList));
+        }
+      });
     }
 
     removeTask = (tasks, taskTrashBtns) => {
@@ -74,7 +86,13 @@ export default class TodoTasks {
     getLocalStorage = () => this.taskList;
 
     emptyList = () => {
-      this.taskList = [];
+      this.taskList.forEach((task) => {
+        if (task.completed) {
+          this.taskList.splice(task.index, 1);
+          this.taskList.sort((a, b) => a.index - b.index);
+          this.resetIndex();
+        }
+      });
       localStorage.setItem('tasks', JSON.stringify(this.taskList));
       this.showTodoList();
     }
