@@ -1,15 +1,14 @@
-//import './style.css';
-//import refresh from '../assets/rotate-solid.svg';
-//import arrowD from '../assets/arrow-turn-down-left.png'
-//import trashT from '../assets/trash-can-regular.svg'
-import TodoTasks from "./todo.js"
+import TodoTasks from './todo.js';
+import './style.css';
 
-// const refreshImg = document.getElementById('refresh');
-// refreshImg.src = refresh;
-// const arrowImg = document.getElementById('arrow-d-l');
-// arrowImg.src = arrowD;
-// const trashImg = document.getElementById('arrow-d-l');
-// trashImg.src = trashT;
+import refresh from '../assets/rotate-solid.svg';
+import arrowD from '../assets/arrow-turn-down-left.png';
+
+const refreshImg = document.getElementById('refresh');
+const arrowImg = document.getElementById('arrow-d-l');
+
+refreshImg.src = refresh;
+arrowImg.src = arrowD;
 
 const todoForm = document.querySelector('#task-form');
 const clearList = document.querySelector('.btn');
@@ -19,21 +18,17 @@ if (todos.getLocalStorage().length > 0) {
   todos.showTodoList();
 }
 
-
-["keypress", "submit"].forEach((item) => {
+['keypress', 'submit'].forEach((item) => {
   todoForm.addEventListener(item, (event) => {
-    if (event.key === "Enter" || event.type === "submit") {
-      //todoFormlistener(event);
+    if (event.key === 'Enter' || event.type === 'submit') {
       event.preventDefault();
-      const taskDescription = document.querySelector('.new-item').value;
-      const newTask = new TodoTasks(taskDescription, false, (new TodoTasks()).getLocalStorage().length);
+      const tDescrip = document.querySelector('.new-item').value;
+      const newTask = new TodoTasks(tDescrip, false, (new TodoTasks()).getLocalStorage().length);
       newTask.AddTodo();
       newTask.showTodoList();
       todoForm.reset();
     }
-  })
+  });
 });
 
-
 clearList.addEventListener('click', () => (new TodoTasks()).emptyList());
-
