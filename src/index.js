@@ -1,37 +1,39 @@
-import './style.css';
-import refresh from '../assets/rotate-solid.svg';
+//import './style.css';
+//import refresh from '../assets/rotate-solid.svg';
+//import arrowD from '../assets/arrow-turn-down-left.png'
+//import trashT from '../assets/trash-can-regular.svg'
+import TodoTasks from "./todo.js"
 
-const refreshImg = document.getElementById('refresh');
-refreshImg.src = refresh;
+// const refreshImg = document.getElementById('refresh');
+// refreshImg.src = refresh;
+// const arrowImg = document.getElementById('arrow-d-l');
+// arrowImg.src = arrowD;
+// const trashImg = document.getElementById('arrow-d-l');
+// trashImg.src = trashT;
 
-const todoTasks = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'complete To-do list project',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'do the daily coding challenges',
-    completed: false,
-    index: 1,
-  },
-];
+const todoForm = document.querySelector('#task-form');
+const clearList = document.querySelector('.btn');
 
-todoTasks.sort((a, b) => a.index - b.index);
+const todos = new TodoTasks();
+if (todos.getLocalStorage().length > 0) {
+  todos.showTodoList();
+}
 
-const setTodoList = (todoTasks) => {
-  const list = document.querySelector('.list');
-  todoTasks.forEach((task) => {
-    const listItem = document.createElement('li');
-    listItem.className = 'hbb';
-    listItem.innerText = task.description;
-    list.appendChild(listItem);
-  });
-};
 
-setTodoList(todoTasks);
+["keypress", "submit"].forEach((item) => {
+  todoForm.addEventListener(item, (event) => {
+    if (event.key === "Enter" || event.type === "submit") {
+      //todoFormlistener(event);
+      event.preventDefault();
+      const taskDescription = document.querySelector('.new-item').value;
+      const newTask = new TodoTasks(taskDescription, false, (new TodoTasks()).getLocalStorage().length);
+      newTask.AddTodo();
+      newTask.showTodoList();
+      todoForm.reset();
+    }
+  })
+});
+
+
+clearList.addEventListener('click', () => (new TodoTasks()).emptyList());
+
