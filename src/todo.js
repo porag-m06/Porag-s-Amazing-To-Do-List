@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return, consistent-return */
 import trashImgSrc from '../assets/trash-can-regular.svg';
 
 export default class TodoTasks {
@@ -87,7 +86,7 @@ export default class TodoTasks {
   getLocalStorage = () => this.taskList;
 
   clearAllCompleted = () => {
-    this.taskList = this.taskList.filter(task =>!task.completed);
+    this.taskList = this.taskList.filter((task) => !task.completed);
     this.taskList.sort((a, b) => a.index - b.index);
     this.resetIndex();
     localStorage.setItem('tasks', JSON.stringify(this.taskList));
