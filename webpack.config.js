@@ -11,7 +11,7 @@ module.exports = {
   // webpack mode, entry and output config:
   // in package.json add (under) "scripts":{ "build": "webpack"}
   // Now, in the CLI run: [ $ npm run build ] to build your source.
-  mode: 'development',
+  mode: 'production',
   entry: { mymain: myPath.resolve(__dirname, 'src/index.js') },
   output: {
     path: myPath.resolve(__dirname, 'dist'),
