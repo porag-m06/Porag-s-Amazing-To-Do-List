@@ -87,9 +87,7 @@ export default class TodoTasks {
   getLocalStorage = () => this.taskList;
 
   clearAllCompleted = () => {
-    this.taskList = this.taskList.filter((task) => {
-      if (!task.completed) { return task; }
-    });
+    this.taskList = this.taskList.filter(task =>!task.completed);
     this.taskList.sort((a, b) => a.index - b.index);
     this.resetIndex();
     localStorage.setItem('tasks', JSON.stringify(this.taskList));
