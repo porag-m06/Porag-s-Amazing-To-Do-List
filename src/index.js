@@ -31,4 +31,4 @@ if (todos.getLocalStorage().length > 0) {
   });
 });
 
-clearList.addEventListener('click', () => (new TodoTasks()).emptyList());
+clearList.addEventListener('click', () => (new TodoTasks()).clearAllCompleted());
